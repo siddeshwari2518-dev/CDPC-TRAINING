@@ -1,0 +1,97 @@
+#Maximum and Minimum Elements from user inpts
+n = int(input("Enter number of elements: "))
+arr = list(map(int, input("Enter elements: ").split()))
+max_val = arr[0]
+min_val = arr[0]
+for i in arr:
+    if i > max_val:
+        max_val = i
+    if i < min_val:
+        min_val = i
+print("Maximum:", max_val)
+print("Minimum:", min_val)
+
+
+
+##Maximum and Minimum Elements
+arr = [5, 3, 9, 2, 8]
+max_val = arr[0]
+min_val = arr[0]
+
+for i in arr:
+    if i > max_val:
+        max_val = i
+    if i < min_val:
+        min_val = i
+
+print("Maximum:", max_val)
+print("Minimum:", min_val)
+
+
+#removing duplicate values
+arr = [1, 2, 3, 2, 4, 1, 5]
+arr = list(set(arr))
+print("Array without duplicates:", arr)
+max_val = arr[0]
+min_val = arr[0]
+
+for i in arr:
+    if i > max_val:
+        max_val = i
+    if i < min_val:
+        min_val = i
+
+print("Maximum:", max_val)
+print("Minimum:", min_val)
+
+
+#in and notin operator
+arr = [1, 2, 3, 2, 4, 1, 5]
+unique = []
+for i in arr:
+    if i not in unique:
+        unique.append(i)
+print("Array without duplicates:", unique)
+max_val = arr[0]
+min_val = arr[0]
+for i in arr:
+    if i > max_val:
+        max_val = i
+    if i < min_val:
+        min_val = i
+print("Maximum:", max_val)
+print("Minimum:", min_val)
+
+
+#skip value using continue operator
+arr = [1, 2, 3, 4, 3, 5]
+new_arr = []
+for i in arr:
+    if i == 3:
+        continue
+    new_arr.append(i)
+print("Array after removing 3:", new_arr)
+
+
+#skip value using continue operator
+arr = [1, 2, 3, 4, 3, 5]
+new_arr = []
+for i in arr:
+    if i == 3:
+        continue
+    new_arr.append(i)
+print("Array after removing 3:", new_arr)
+
+
+#pattern
+i=1
+j=10
+while i<j:
+  print(i,"\t",j)
+  i=i+1
+  j=j-1
+
+
+
+
+
