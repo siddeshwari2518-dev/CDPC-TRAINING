@@ -1,0 +1,65 @@
+####Hacker Earth Problems
+
+#photo prblm
+L = int(input())   
+N = int(input())      
+
+for x in range(N):
+    W, H = map(int, input().split())
+    
+    if W < L or H < L:
+        print("UPLOAD ANOTHER")
+    elif W == H:
+        print("ACCEPTED")
+    else:
+        print("CROP IT")
+
+
+
+
+#monk and rotation
+T = int(input())
+
+for x in range(T):
+    N, K = map(int, input().split())
+    arr = list(map(int, input().split()))
+    K = K % N 
+    result = arr[-K:] + arr[:-K]
+    print(*result)
+
+
+
+#toggle string
+S = input()
+result = ""
+for ch in S:
+    if ch.islower():
+        result += ch.upper()
+    else:
+        result += ch.lower()
+print(result)
+
+
+
+
+#find the majority element
+n = int(input())
+arr = list(map(int, input().split()))
+candidate = None
+count = 0
+for num in arr:
+    if count == 0:
+        candidate = num
+        count = 1
+    elif num == candidate:
+        count += 1
+    else:
+        count -= 1
+count = arr.count(candidate)
+if count > n // 2:
+    print(candidate)
+else:
+    print("No Majority Element")
+
+
+
