@@ -1,0 +1,133 @@
+#Hacker rank
+import os
+
+def compareTriplets(a, b):
+    # Write your code here
+    alice = 0
+    bob = 0
+    
+    for i in range(3):
+        if a[i] > b[i]:
+            alice += 1
+        elif a[i] < b[i]:
+            bob += 1
+            
+    return [alice, bob]
+
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    a = list(map(int, input().rstrip().split()))
+    b = list(map(int, input().rstrip().split()))
+
+    result = compareTriplets(a, b)
+
+    fptr.write(' '.join(map(str, result)))
+    fptr.write('\n')
+
+    fptr.close()
+
+
+
+#Hacker rank
+def aVeryBigSum(arr):
+    total = 0
+    for num in arr:
+        total += num
+    return total
+
+if __name__ == '__main__':
+    n = int(input())
+    arr = list(map(int, input().split()))
+    result = aVeryBigSum(arr)
+    print(result)
+
+
+
+#Hacker Rank
+def diagonalDifference(arr):
+    # Write your code here
+    n = len(arr)
+    primary = 0
+    secondary = 0
+    
+    for i in range(n):
+        primary += arr[i][i]
+        secondary += arr[i][n-i-1]
+        
+    return abs(primary - secondary)
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    n = int(input().strip())
+
+    arr = []
+
+    for _ in range(n):
+        arr.append(list(map(int, input().rstrip().split())))
+
+    result = diagonalDifference(arr)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
+
+
+
+#Hacker Rank
+def plusMinus(arr):
+    # Write your code here
+  
+    n = len(arr)
+    pos = 0
+    neg = 0
+    zero = 0
+    
+    for i in arr:
+        if i > 0:
+            pos += 1
+        elif i < 0:
+            neg += 1
+        else:
+            zero += 1
+    
+    print(f"{pos/n:.6f}")
+    print(f"{neg/n:.6f}")
+    print(f"{zero/n:.6f}")
+
+if __name__ == '__main__':
+    n = int(input().strip())
+
+    arr = list(map(int, input().rstrip().split()))
+
+    plusMinus(arr)
+
+
+
+#array rotation
+def rotateRight(arr, k):
+    n = len(arr)
+    k = k % n   # handle cases where k > n
+    return arr[-k:] + arr[:-k]
+
+# input
+n = int(input("Enter number of elements: "))
+arr = list(map(int, input("Enter elements: ").split()))
+k = int(input("Enter number of steps: "))
+
+result = rotateRight(arr, k)
+print("Rotated array:", result)
+
+
+
+#reverse array
+n = 1
+arr = [1, 2, 3, 4, 5]
+for x in range(n):
+    temp = arr[-1]             
+    for i in range(len(arr)-1, 0, -1):
+        arr[i] = arr[i-1]     
+    arr[0] = temp               
+print(arr)
