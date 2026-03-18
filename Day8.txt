@@ -1,0 +1,59 @@
+######LEET CODE PROBLEMS
+
+#two sum
+class Solution:
+    def twoSum(self, nums, target):
+        seen = {}  
+        for i in range(len(nums)):
+            complement = target - nums[i]
+            if complement in seen:
+                return [seen[complement], i]
+            seen[nums[i]] = i
+
+
+
+
+#fizz buzz
+class Solution:
+    def fizzBuzz(self, n: int) -> List[str]:
+        answer = []
+        for i in range(1, n + 1):
+            if i % 3 == 0 and i % 5 == 0:
+                answer.append("FizzBuzz")
+            elif i % 3 == 0:
+                answer.append("Fizz")
+            elif i % 5 == 0:
+                answer.append("Buzz")
+            else:
+                answer.append(str(i))
+        return answer
+
+
+
+
+#sum of 1D array
+class Solution:
+    def runningSum(self, nums: List[int]) -> List[int]:
+         result = []
+        total = 0
+        for num in nums:
+            total += num
+            result.append(total)
+        return result
+
+
+
+#next larger element
+nums = list(map(int, input().split()))
+n = len(nums)
+result = [-1] * n
+stack = []
+for i in range(n):
+    while stack and nums[i] > nums[stack[-1]]:
+        index = stack.pop()
+        result[index] = nums[i]
+    stack.append(i)
+print(*result)
+
+
+
