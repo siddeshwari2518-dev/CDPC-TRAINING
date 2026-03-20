@@ -1,0 +1,120 @@
+#leetcode
+##1.Palindrome Number-------------------------------------------
+class Solution:
+    def isPalindrome(self, x: int) -> bool:
+        if x < 0 or (x % 10 == 0 and x != 0):
+            return False
+        reversed_half = 0
+        while x > reversed_half:
+            reversed_half = reversed_half * 10 + x % 10
+            x //= 10
+        return x == reversed_half or x == reversed_half // 10
+
+##2.Richest Customer Wealth-------------------------------------------
+class Solution:
+    def maximumWealth(self, accounts: List[List[int]]) -> int:
+        max_wealth = 0
+        for customer in accounts:
+            wealth = sum(customer)
+            if wealth > max_wealth:
+                max_wealth = wealth
+        return max_wealth 
+
+#hakererath
+##1.Find product---------------------------------------------------
+n = int(input())
+numbers = list(map(int, input().split()))
+
+product = 1
+for num in numbers:
+    product = product * num
+
+print(product % (10**9 + 7))
+
+#hakerank
+##1.Staircase------------------------------------------------------
+#!/bin/python3
+import math
+import os
+import random
+import re
+import sys
+# Complete the 'staircase' function below.
+# The function accepts INTEGER n as parameter.
+def staircase(n):
+    # Write your code here
+    for i in range(1, n+1):
+        print((n-i)*' ' + i*'#')
+if __name__ == '__main__':
+    n = int(input().strip())
+    staircase(n)
+
+##2.Mini-Max Sum ------------------------------------------------------
+#!/bin/python3
+import math
+import os
+import random
+import re
+import sys
+# Complete the 'miniMaxSum' function below.
+# The function accepts INTEGER_ARRAY arr as parameter.
+def miniMaxSum(arr):
+    # Write your code here
+    arr.sort()
+    print(sum(arr[:4]), sum(arr[1:]))
+if __name__ == '__main__':
+    arr = list(map(int, input().rstrip().split()))
+    miniMaxSum(arr)
+
+##3.Birthday Cake Candles--------------------------------------------------
+#!/bin/python3
+import math
+import os
+import random
+import re
+import sys
+# Complete the 'birthdayCakeCandles' function below.
+# The function is expected to return an INTEGER.
+# The function accepts INTEGER_ARRAY candles as parameter.
+def birthdayCakeCandles(candles):
+    # Write your code here
+    return candles.count(max(candles))
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+    candles_count = int(input().strip())
+    candles = list(map(int, input().rstrip().split()))
+    result = birthdayCakeCandles(candles)
+    fptr.write(str(result) + '\n')
+    fptr.close()
+
+##4.Time Conversion--------------------------------------------------
+#!/bin/python3
+import math
+import os
+import random
+import re
+import sys
+# Complete the 'timeConversion' function below.
+# The function is expected to return a STRING.
+# The function accepts STRING s as parameter.
+def timeConversion(s):
+    # Write your code here
+    h, m, sec = int(s[:2]), s[3:5], s[6:8]
+    period = s[-2:]
+    if period == 'AM':
+        h = 0 if h == 12 else h
+    else:
+        h = 12 if h == 12 else h + 12
+    return f"{h:02d}:{m}:{sec}"
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+    s = input()
+    result = timeConversion(s)
+    fptr.write(result + '\n')
+    fptr.close()
+
+
+
+
+
+
